@@ -1,0 +1,25 @@
+<%- include("partials/header.ejs") %>
+
+    <div class="welcome-section">
+        <h1>Welcome to BlogLer <i class="fa-solid fa-pen-nib"></i></h1>
+        <p class="info-para">Create, Edit and Delete blog-posts, all at your own convenience</p>
+        <p>(REMEMBER, posts are available for the current session only)</p>
+    </div>
+
+    <div class="blog-list">
+        <% if(total !==0){ %>
+            <h3><u>Available Blogs</u>:</h3>
+            <ul style="list-style:square;">
+                <% for(let i of Object.keys(blogTitle)){ %>
+                    <li><a href="/<%= i %>" class="blog-links">
+                            <q>
+                                <%= blogTitle[i] %>
+                            </q> ~ <%= blogAuthor[i] %>
+                        </a></li>
+                    <% } %>
+            </ul>
+            <% }else{ %>
+                <% } %>
+    </div>
+
+    <%- include("partials/footer.ejs") %>

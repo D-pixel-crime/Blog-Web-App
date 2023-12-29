@@ -1,0 +1,15 @@
+<%- include("partials/header.ejs") %>
+
+    <% if(route==="/creation-success" ){ %>
+        <div class="alert alert-success" role="alert" style="font-weight: bolder;">Your Blog was just added ! 😍</div>
+        <% }else if(route==="/updation-success" ){ %>
+            <div class="alert alert-success" role="alert" style="font-weight: bolder;">Your Blog was successfully
+                updated ! 😍</div>
+            <% }else if(route==="/deletion-success" ){ %>
+                <div class="alert alert-danger" role="alert" style="font-weight: bolder;">Blog deleted ! 🥲</div>
+                <% }else{ %>
+                    <div class="alert alert-danger" role="alert" style="font-weight: bolder;">Incorrect Password ! 😡
+                    </div>
+                    <% } %>
+
+<%- include("partials/footer.ejs") %>

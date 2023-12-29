@@ -1,0 +1,72 @@
+<%- include("partials/header.ejs") %>
+
+    <div class="post-section">
+        <h1 class="post-h1">
+            <%= blogTitle %>
+        </h1>
+        <p class="post-author">- <%= blogAuthor %>
+        </p>
+        <p class="post-content">
+            <%- blogContent %>
+        </p>
+        <div class="manipulation-buttons">
+            <div class="delete-button">
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    DELETE
+                </button>
+                <div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Validate Yourself</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="/delete-<%= id %>" method="post">
+                                    <div class="form-floating">
+                                        <input type="password" class="form-control" name="validatePassword"
+                                            placeholder="Password">
+                                        <label for="validatePassword">Password</label>
+                                    </div>
+                                    <button type="submit" class="btn btn-outline-danger">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="edit-button">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    EDIT
+                </button>
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Validate Yourself</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="/edit-<%= id %>" method="post">
+                                    <div class="form-floating">
+                                        <input type="password" class="form-control" name="validatePassword"
+                                            placeholder="Password">
+                                        <label for="validatePassword">Password</label>
+                                    </div>
+                                    <button type="submit" class="btn btn-outline-info">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include("partials/footer.ejs") %>

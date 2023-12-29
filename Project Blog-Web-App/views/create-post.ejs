@@ -1,0 +1,31 @@
+<%- include("partials/header.ejs") %>
+
+    <div class="create-page">
+        <h1 style="text-align: center;">Add Your Blog👇</h1>
+
+        <form action="/create-post" method="post">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="createTitle" placeholder="Title" required
+                    style="width: 95vw;">
+                <label for="createTitle">Title</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="authorName" placeholder="Author" required
+                    style="width: 95vw;">
+                <label for="authorName">Author Name</label>
+            </div>
+            <div class="form-floating mb-3">
+                <textarea class="form-control" name="createContent" placeholder="Content" required
+                    style="width: 95vw;height: 18rem;"></textarea>
+                <label for="createContent">Content</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" name="createPassword" placeholder="Password" required
+                    style="width:95vw;">
+                <label for="createPassword">Password</label>
+            </div>
+            <button type="submit" class="btn btn-info">Create</button>
+        </form>
+    </div>
+
+    <%- include("partials/footer.ejs") %>

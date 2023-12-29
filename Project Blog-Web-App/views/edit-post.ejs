@@ -1,0 +1,28 @@
+<%- include("partials/header.ejs") %>
+
+    <div class="edit-page">
+        <h1 style="text-align: center;">Here you go, Make the changes✒️</h1>
+        <p style="text-align: center;font-weight: bolder;font-size: 1.5rem;margin-top: -1rem;">(The &lt;br&gt; tag
+            signifies new-line)</p>
+
+        <form action="/update-post-<%= id %>" method="post">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="updateTitle" placeholder="Title" required
+                    style="width: 95vw;" value="<%= blogTitle %>">
+                <label for="updateTitle">Title</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="authorName" placeholder="Author" required
+                    style="width: 95vw;" value="<%= blogAuthor %>">
+                <label for="authorName">Author Name</label>
+            </div>
+            <div class="form-floating mb-3">
+                <textarea class="form-control" name="updateContent" placeholder="Content" required
+                    style="width: 95vw;height: 18rem;"><%- blogContent %></textarea>
+                <label for="updateContent">Content</label>
+            </div>
+            <button type="submit" class="btn btn-info" style="margin-top: -0.5rem;">Update</button>
+        </form>
+    </div>
+
+    <%- include("partials/footer.ejs") %>
