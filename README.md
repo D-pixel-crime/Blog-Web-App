@@ -37,10 +37,10 @@ npm install
 ```
 
 
-5. Start the server:
+4. Start the server:
 
 ```
 node index.js
 ```
 
-6. Access the website by visiting `http://localhost:1014` in your web browser.
+5. Access the website by visiting `http://localhost:1014` in your web browser.
